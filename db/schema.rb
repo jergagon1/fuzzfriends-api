@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150530215653) do
     t.integer  "zipcode"
     t.boolean  "logged_in",     default: true
     t.boolean  "admin",         default: false
+    t.integer  "wags"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
