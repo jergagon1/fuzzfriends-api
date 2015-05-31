@@ -14,10 +14,10 @@ class UsersController < ApplicationController
   end
 
   def log_in
-
     find_user params
     if @user
       @user.update_attributes(logged_in: true)
+      render json: @user
     end
   end
 
