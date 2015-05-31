@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class UsersController < ApplicationController
   def create
     @user = User.create user_params
     render json: @user
@@ -18,7 +18,6 @@ class Api::V1::UsersController < ApplicationController
     find_user params
     if @user
       @user.update_attributes(logged_in: true)
-      
     end
   end
 
