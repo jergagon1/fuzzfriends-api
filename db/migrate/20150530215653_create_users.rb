@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :zipcode
       t.boolean :logged_in, default: true
       t.boolean :admin, default: false
+      t.integer :wags
 
       t.timestamps null: false
     end
