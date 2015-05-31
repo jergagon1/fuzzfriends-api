@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:create]
+      get '/logged_in', to: 'users#logged_in'
+      put '/log_in', to: 'users#log_in'
+      put '/log_out', to: 'users#log_out'
+    end
+    match ":api/*path", :to => redirect("/api/v1/%{path}"), via: [:get, :post]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
